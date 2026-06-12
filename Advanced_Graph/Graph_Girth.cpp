@@ -178,9 +178,9 @@ void solve() {
         while(!q.empty()){
             int u=q.front();
             q.pop();
-            if(2*dist[u]+1>=ans){
-                continue;
-            }
+            // if(2*dist[u]+1>=ans){
+            //     continue;
+            // }
             for(auto it:adj[u]){
                 if(dist[it]==-1){
                     dist[it]=dist[u]+1;
