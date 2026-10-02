@@ -189,10 +189,13 @@ class DSU{
         if(size[vd]>size[ud]){
             swap(ud,vd);
         }
-        parent[vd]=ud;
-        size[ud]+=size[vd];
         auto it=ms.find(size[vd]);
         ms.erase(it);
+        auto it2=ms.find(size[ud]);
+        ms.erase(it2);
+
+        parent[vd]=ud;
+        size[ud]+=size[vd];
         ms.insert(size[ud]);
         cnt--;
         return;
